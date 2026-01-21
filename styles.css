@@ -1,0 +1,112 @@
+:root {
+    --bg: #1a1a2e;
+    --card: #16213e;
+    --accent: #e94560;
+    --text: #ffffff;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.game-container {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-around;
+    background: var(--card);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.battle-zone {
+    text-align: center;
+    background: var(--card);
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px solid #0f3460;
+}
+
+.hp-container {
+    width: 100%;
+    height: 30px;
+    background: #333;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    margin: 15px 0;
+}
+
+.hp-fill {
+    width: 100%;
+    height: 100%;
+    background: var(--accent);
+    transition: width 0.1s ease;
+}
+
+.hp-text {
+    position: absolute;
+    width: 100%;
+    top: 5px;
+    font-size: 14px;
+    text-shadow: 1px 1px 2px black;
+}
+
+.monster-sprite {
+    font-size: 80px;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.05s;
+    margin: 20px 0;
+}
+
+.monster-sprite:active {
+    transform: scale(0.9);
+}
+
+.upgrade {
+    background: var(--card);
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.buy-btn {
+    background: var(--accent);
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.buy-btn:disabled { background: #555; }
+
+.hidden { display: none; }
+
+.flash-text {
+    position: fixed;
+    color: gold;
+    font-weight: bold;
+    pointer-events: none;
+    animation: floatUp 1s forwards;
+}
+
+@keyframes floatUp {
+    from { transform: translateY(0); opacity: 1; }
+    to { transform: translateY(-50px); opacity: 0; }
+}
