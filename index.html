@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monster Slayer RPG</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="header">
+            <div class="stat">Gold: <span id="gold">0</span></div>
+            <div class="stat">DPS: <span id="dps">0</span></div>
+            <div class="stat">Level: <span id="level">1</span></div>
+        </div>
+
+        <div class="battle-zone">
+            <h2 id="monster-name">Slime</h2>
+            <div class="hp-container">
+                <div id="hp-bar" class="hp-fill"></div>
+                <div class="hp-text"><span id="current-hp">10</span> / <span id="max-hp">10</span></div>
+            </div>
+            
+            <div id="clicker" class="monster-sprite">
+                <div class="monster-placeholder">👾</div>
+            </div>
+            
+            <div id="boss-timer-container" class="hidden">
+                BOSS TIMER: <span id="timer">30</span>s
+            </div>
+        </div>
+
+        <div class="tabs">
+            <button class="tab-btn active" onclick="showTab('shop')">Heroes/Items</button>
+            <button class="tab-btn" onclick="showTab('stats')">Stats/Admin</button>
+        </div>
+
+        <div id="shop" class="tab-content active">
+            <div id="upgrades-list"></div>
+        </div>
+
+        <div id="stats" class="tab-content">
+            <button id="admin-btn">Admin Login</button>
+            <div id="admin-panel" class="hidden">
+                <input type="text" id="auth-input" placeholder="Code...">
+                <button id="auth-submit">Unlock</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="popups"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
